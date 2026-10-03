@@ -268,6 +268,66 @@ body.modal-open {
         grid-template-columns: 1fr;
     }
 }
+</style><style>
+
+/* ======================================================
+   INTERACTIVE VIDEO WORK MODAL
+   ====================================================== */
+
+.video-work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding-top: 24px;
+}
+
+.video-work-card {
+    overflow: hidden;
+    border: 1px solid rgba(10, 10, 10, 0.12);
+    background: #ffffff;
+}
+
+.video-work-card video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    background: #101010;
+}
+
+.video-work-card-info {
+    padding: 16px 17px 18px;
+}
+
+.video-work-card-info > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #5e5e59;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.video-work-card-info h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.video-work-card-info p {
+    margin: 8px 0 0;
+    color: #5e5e59;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+    .video-work-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
@@ -939,14 +999,40 @@ body.modal-open {
                             AI-Assisted Visual Storytelling
                         </h3>
 
+                        <p>
+                            Selected video projects created from concept
+                            to final output, combining scripting, visual
+                            direction, AI-assisted production, and editing.
+                        </p>
+
                     </div>
 
-                    <p>
-                        AI-generated characters and visual compositions
-                        used to support language-learning content and
-                        create a consistent visual identity across
-                        different language series.
-                    </p>
+                    <div class="language-work-card">
+
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">VIDEO</span>
+                            <span class="language-work-count">04 selected videos</span>
+                        </div>
+
+                        <h4>
+                            Explore the video work.
+                        </h4>
+
+                        <p>
+                            A selected set of language, educational, and
+                            promotional video projects developed through
+                            AI-assisted visual workflows.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-video-gallery
+                        >
+                            View My Video Work ↗
+                        </button>
+
+                    </div>
 
                 </article>
 
@@ -1773,6 +1859,57 @@ body.modal-open {
 
     </div>
 
+
+
+    <!-- =========================
+         VIDEO WORK MODAL
+    ========================== -->
+
+    <div class="work-modal" id="videoWorkModal" hidden>
+
+        <div class="work-modal-backdrop" data-close-video-modal></div>
+
+        <div
+            class="work-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="videoWorkModalTitle"
+            tabindex="-1"
+        >
+
+            <div class="work-modal-header">
+
+                <div>
+                    <p class="work-modal-kicker">
+                        AI VISUAL CONTENT
+                    </p>
+
+                    <h2 class="work-modal-title" id="videoWorkModalTitle">
+                        Selected Video Work
+                    </h2>
+
+                    <p class="work-modal-description">
+                        Selected video projects created from concept to final output.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="work-modal-close"
+                    id="videoWorkModalClose"
+                    aria-label="Close video work gallery"
+                >
+                    Close
+                </button>
+
+            </div>
+
+            <div class="video-work-grid" id="videoWorkGrid"></div>
+
+        </div>
+
+    </div>
+
     <script src="script.js"></script>
 
     <script>
@@ -1865,6 +2002,117 @@ body.modal-open {
             document.addEventListener("keydown", function (event) {
                 if (event.key === "Escape" && modal && !modal.hidden) {
                     closeGallery();
+                }
+            });
+        })();
+    </script>
+
+
+
+    <script>
+        (function () {
+            const modal = document.getElementById("videoWorkModal");
+            const modalDialog = modal ? modal.querySelector(".work-modal-dialog") : null;
+            const modalClose = document.getElementById("videoWorkModalClose");
+            const modalGrid = document.getElementById("videoWorkGrid");
+
+            const videos = [
+                {
+                    label: "ENGLISH · AI-ASSISTED CONTENT",
+                    title: "Aya Avatar English — TOEFL / IELTS",
+                    description: "AI-avatar English content focused on TOEFL / IELTS.",
+                    file: "english-toefl-ielts.mp4",
+                    poster: "english-toefl-ielts.jpg"
+                },
+                {
+                    label: "GERMAN · LANGUAGE CONTENT",
+                    title: "Nursing German B2",
+                    description: "German-language video content built around nursing-related communication.",
+                    file: "german-nursing-b2.mp4",
+                    poster: "german-nursing-b2.jpg"
+                },
+                {
+                    label: "STUDY ABROAD · PROMOTIONAL CONTENT",
+                    title: "Asia + Study Abroad Reel",
+                    description: "A short study-abroad promotional reel focused on Asia.",
+                    file: "asia-study-abroad-reel.mp4",
+                    poster: "asia-study-abroad-reel.jpg"
+                },
+                {
+                    label: "MLC · AI-ASSISTED VIDEO",
+                    title: "MLC Language Content Video",
+                    description: "Language-center video content featuring an AI presenter.",
+                    file: "mlc-language-video.mp4",
+                    poster: "mlc-language-video.jpg"
+                }
+            ];
+
+            function renderVideos() {
+                if (!modalGrid) return;
+
+                modalGrid.innerHTML = videos.map(function (item, index) {
+                    const number = String(index + 1).padStart(2, "0");
+                    const path = "assets/work/videos/" + item.file;
+                    const poster = "assets/work/videos/" + item.poster;
+
+                    return `
+                        <article class="video-work-card">
+                            <video
+                                controls
+                                preload="metadata"
+                                poster="${poster}"
+                                playsinline
+                            >
+                                <source src="${path}" type="video/mp4">
+                                Your browser does not support embedded video.
+                            </video>
+                            <div class="video-work-card-info">
+                                <span>${number} · ${item.label}</span>
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                            </div>
+                        </article>
+                    `;
+                }).join("");
+            }
+
+            function openVideoGallery() {
+                if (!modal) return;
+                renderVideos();
+                modal.hidden = false;
+                document.body.classList.add("modal-open");
+                if (modalDialog) modalDialog.focus();
+                if (modalClose) modalClose.focus();
+            }
+
+            function closeVideoGallery() {
+                if (!modal) return;
+
+                modal.querySelectorAll("video").forEach(function (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+
+                modal.hidden = true;
+                document.body.classList.remove("modal-open");
+                if (modalGrid) modalGrid.innerHTML = "";
+            }
+
+            document.querySelectorAll("[data-video-gallery]").forEach(function (button) {
+                button.addEventListener("click", openVideoGallery);
+            });
+
+            if (modalClose) {
+                modalClose.addEventListener("click", closeVideoGallery);
+            }
+
+            document.querySelectorAll("[data-close-video-modal]").forEach(function (element) {
+                element.addEventListener("click", closeVideoGallery);
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && modal && !modal.hidden) {
+                    closeVideoGallery();
                 }
             });
         })();
