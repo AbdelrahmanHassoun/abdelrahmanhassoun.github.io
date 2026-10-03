@@ -964,53 +964,37 @@ body.cross-cultural-modal-open {
 
 <style>
 /* ======================================================
-   EXPERIENCE — LINKEDIN ACTION
+   HERO META — INSTITUTION LINKS
    ====================================================== */
 
-.experience-role-row {
+.hero-meta > div {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 8px 0 20px;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.experience-role-row h4 {
-    margin: 0;
-}
-
-.experience-linkedin-button {
+.hero-meta-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 36px;
-    padding: 0 13px;
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    width: fit-content;
+    min-height: 28px;
+    padding: 0 10px;
+    border: 1px solid rgba(10, 10, 10, 0.18);
     background: transparent;
-    color: #ffffff;
+    color: #0a0a0a;
     font-size: 9px;
     font-weight: 900;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
-.experience-linkedin-button:hover {
-    transform: translateY(-2px);
-    border-color: #c7ff3d;
-    background: #c7ff3d;
-    color: #0a0a0a;
-}
-
-@media (max-width: 560px) {
-    .experience-role-row {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .experience-linkedin-button {
-        width: fit-content;
-    }
+.hero-meta-link:hover {
+    transform: translateY(-1px);
+    border-color: #0a0a0a;
+    background: #0a0a0a;
+    color: #ffffff;
 }
 </style>
 
@@ -1109,6 +1093,16 @@ body.cross-cultural-modal-open {
                         <div>
                             <strong>GJU</strong>
                             <span>Translation</span>
+
+                            <a
+                                class="hero-meta-link"
+                                href="https://www.gju.edu.jo/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit German Jordanian University website"
+                            >
+                                Visit GJU ↗
+                            </a>
                         </div>
 
                         <div>
@@ -1119,6 +1113,16 @@ body.cross-cultural-modal-open {
                         <div>
                             <strong>MLC</strong>
                             <span>Professional Experience</span>
+
+                            <a
+                                class="hero-meta-link"
+                                href="https://mlc.edu.jo/en/home/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Modern Language Center website"
+                            >
+                                Visit MLC ↗
+                            </a>
                         </div>
 
                     </div>
@@ -1321,22 +1325,9 @@ body.cross-cultural-modal-open {
                             Professional Experience
                         </h3>
 
-                        <div class="experience-role-row">
-
-                            <h4>
-                                Intern → Official Employee
-                            </h4>
-
-                            <a
-                                class="experience-linkedin-button"
-                                href="https://lnkd.in/p/dVtruiV5"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                View on LinkedIn ↗
-                            </a>
-
-                        </div>
+                        <h4>
+                            Intern → Official Employee
+                        </h4>
 
                         <p>
                             My journey with the Modern Language Center
