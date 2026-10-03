@@ -998,6 +998,96 @@ body.cross-cultural-modal-open {
 }
 </style>
 
+
+<style>
+/* ======================================================
+   EXPERIENCE HIGHLIGHTS — INTERNAL WORK LINKS
+   ====================================================== */
+
+.experience-highlight {
+    position: relative;
+}
+
+.experience-highlight-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    min-height: 34px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: transparent;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: transform 180ms ease, background 180ms ease,
+                color 180ms ease, border-color 180ms ease;
+}
+
+.experience-highlight-action:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+#korean-language-content,
+#ai-visual-content {
+    scroll-margin-top: 90px;
+}
+
+@media (max-width: 560px) {
+    .experience-highlight-action {
+        width: fit-content;
+    }
+}
+</style>
+
+
+<style>
+/* ======================================================
+   EXPERIENCE — LINKEDIN ACTION
+   ====================================================== */
+
+.experience-role-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 8px 0 20px;
+}
+
+.experience-role-row h4 {
+    margin: 0;
+}
+
+.experience-linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: transparent;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease,
+                color 220ms ease, border-color 220ms ease;
+}
+
+.experience-linkedin-button:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+</style>
+
 </head>
 
 <body>
@@ -1325,9 +1415,22 @@ body.cross-cultural-modal-open {
                             Professional Experience
                         </h3>
 
-                        <h4>
-                            Intern → Official Employee
-                        </h4>
+                        <div class="experience-role-row">
+
+                            <h4>
+                                Intern → Official Employee
+                            </h4>
+
+                            <a
+                                class="experience-linkedin-button"
+                                href="https://lnkd.in/p/dVtruiV5"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View on LinkedIn ↗
+                            </a>
+
+                        </div>
 
                         <p>
                             My journey with the Modern Language Center
@@ -1350,6 +1453,13 @@ body.cross-cultural-modal-open {
                                     workflows and visual content.
                                 </span>
 
+                                <a
+                                    class="experience-highlight-action"
+                                    href="#ai-visual-content"
+                                >
+                                    View My Digital Content ↗
+                                </a>
+
                             </div>
 
 
@@ -1364,6 +1474,13 @@ body.cross-cultural-modal-open {
                                     and other language-learning content
                                     formats.
                                 </span>
+
+                                <a
+                                    class="experience-highlight-action"
+                                    href="#korean-language-content"
+                                >
+                                    View My Language Content ↗
+                                </a>
 
                             </div>
 
@@ -1469,7 +1586,7 @@ body.cross-cultural-modal-open {
                      KOREAN
                 ========================== -->
 
-                <article class="language-showcase">
+                <article class="language-showcase" id="korean-language-content">
 
                     <div class="language-info">
 
@@ -1689,7 +1806,7 @@ body.cross-cultural-modal-open {
                      AI VISUAL CONTENT
                 ========================== -->
 
-                <article class="ai-visual-section">
+                <article class="ai-visual-section" id="ai-visual-content">
 
                     <div>
 
@@ -2541,7 +2658,7 @@ body.cross-cultural-modal-open {
 
                     <a
                         class="linkedin-card"
-                        href="https://www.linkedin.com/posts/abdelrahman-hassoun_%D9%81%D9%8A-%D8%A7%D9%84%D8%A2%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D8%A3%D8%AE%D9%8A%D8%B1%D8%A9-%D8%A8%D8%AF%D8%A3%D8%AA-%D8%A3%D9%84%D8%A7%D8%AD%D8%B8-%D8%A8%D8%A3%D9%86-ai-in-translation-activity-7430321534302523392-sKrD"
+                        href="https://lnkd.in/p/dVtruiV5"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -2580,24 +2697,26 @@ body.cross-cultural-modal-open {
                     </a>
 
 
-                    <a
+                                        <a
                         class="linkedin-card"
-                        href="https://www.linkedin.com/posts/abdelrahman-hassoun_careerdevelopment-networking-professionalgrowth-activity-7459120070959656960-oF9Q"
+                        href="https://lnkd.in/p/dZJ6rSRg"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <span>CAREER DEVELOPMENT</span>
+                        <span>CULTURAL EXCHANGE</span>
                         <h3>
-                            Career Paths Are No Longer Linear
+                            Arabic Language &amp;
+                            Culture Summer School
                         </h3>
                         <p>
-                            Reflections on networking, continuous learning,
-                            visibility, and professional development.
+                            Reflections on cultural exchange, language,
+                            communication, and learning across cultures.
                         </p>
                         <strong>
                             View on LinkedIn →
                         </strong>
                     </a>
+
 
 
                     <a
