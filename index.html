@@ -961,6 +961,59 @@ body.cross-cultural-modal-open {
 }
 </style>
 
+
+<style>
+/* ======================================================
+   EXPERIENCE — LINKEDIN ACTION
+   ====================================================== */
+
+.experience-role-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 8px 0 20px;
+}
+
+.experience-role-row h4 {
+    margin: 0;
+}
+
+.experience-linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: transparent;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.experience-linkedin-button:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+@media (max-width: 560px) {
+    .experience-role-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .experience-linkedin-button {
+        width: fit-content;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -1268,9 +1321,22 @@ body.cross-cultural-modal-open {
                             Professional Experience
                         </h3>
 
-                        <h4>
-                            Intern → Official Employee
-                        </h4>
+                        <div class="experience-role-row">
+
+                            <h4>
+                                Intern → Official Employee
+                            </h4>
+
+                            <a
+                                class="experience-linkedin-button"
+                                href="https://lnkd.in/p/dVtruiV5"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View on LinkedIn ↗
+                            </a>
+
+                        </div>
 
                         <p>
                             My journey with the Modern Language Center
