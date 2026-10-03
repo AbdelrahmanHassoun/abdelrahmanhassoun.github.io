@@ -4,38 +4,129 @@
 // =========================================================
 
 
-// =========================================================
-// 1. UPDATE FOOTER YEAR
-// =========================================================
+/* =========================================================
+   1. FOOTER YEAR
+========================================================= */
 
 const currentYear = new Date().getFullYear();
 
-const footerYear = document.querySelector(".footer-content p");
+const footerYear = document.getElementById("currentYear");
 
 if (footerYear) {
-    footerYear.textContent = `© ${currentYear} Abdelrahman Hassoun`;
+    footerYear.textContent = currentYear;
 }
 
 
-// =========================================================
-// 2. SMOOTH SCROLLING
-// =========================================================
+/* =========================================================
+   2. MOBILE NAVIGATION
+========================================================= */
 
-const navigationLinks = document.querySelectorAll(
-    'a[href^="#"]'
-);
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen = navLinks.classList.toggle("active");
+
+        menuToggle.classList.toggle("active", isOpen);
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
+
+    });
+
+
+    /* Close menu after clicking a navigation link */
+
+    const mobileLinks = navLinks.querySelectorAll("a");
+
+    mobileLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        });
+
+    });
+
+
+    /* Close menu when clicking outside */
+
+    document.addEventListener("click", (event) => {
+
+        const clickedInsideMenu =
+            navLinks.contains(event.target);
+
+        const clickedMenuButton =
+            menuToggle.contains(event.target);
+
+        if (
+            !clickedInsideMenu &&
+            !clickedMenuButton &&
+            navLinks.classList.contains("active")
+        ) {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   3. SMOOTH SCROLLING
+========================================================= */
+
+const navigationLinks =
+    document.querySelectorAll('a[href^="#"]');
 
 navigationLinks.forEach((link) => {
 
     link.addEventListener("click", (event) => {
 
-        const targetId = link.getAttribute("href");
+        const targetId =
+            link.getAttribute("href");
 
         if (!targetId || targetId === "#") {
             return;
         }
 
-        const targetElement = document.querySelector(targetId);
+        const targetElement =
+            document.querySelector(targetId);
 
         if (!targetElement) {
             return;
@@ -53,11 +144,12 @@ navigationLinks.forEach((link) => {
 });
 
 
-// =========================================================
-// 3. NAVBAR SCROLL STATE
-// =========================================================
+/* =========================================================
+   4. NAVBAR SCROLL STATE
+========================================================= */
 
-const navbar = document.querySelector(".navbar");
+const navbar =
+    document.getElementById("navbar");
 
 function updateNavbar() {
 
@@ -66,59 +158,145 @@ function updateNavbar() {
     }
 
     if (window.scrollY > 30) {
-        navbar.classList.add("navbar-scrolled");
+
+        navbar.classList.add("scrolled");
+
     } else {
-        navbar.classList.remove("navbar-scrolled");
+
+        navbar.classList.remove("scrolled");
+
     }
 
 }
 
-window.addEventListener("scroll", updateNavbar);
+window.addEventListener(
+    "scroll",
+    updateNavbar,
+    { passive: true }
+);
 
 updateNavbar();
 
 
-// =========================================================
-// 4. REVEAL ELEMENTS WHEN THEY ENTER THE VIEWPORT
-// =========================================================
+/* =========================================================
+   5. REVEAL ANIMATIONS
+========================================================= */
 
-const revealElements = document.querySelectorAll(
-    ".section-heading, .fact-card, .experience-card, .project-card, .certificate, .education-card"
-);
+const revealElements =
+    document.querySelectorAll(
+        `
+        .section-heading,
+        .fact-card,
+        .experience-card,
+        .experience-highlight,
+        .language-showcase,
+        .ai-visual-section,
+        .project-card,
+        .leadership-card,
+        .certificate,
+        .linkedin-card,
+        .education-card,
+        .aspire-note
+        `
+    );
 
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
 
-        entries.forEach((entry) => {
+if ("IntersectionObserver" in window) {
 
-            if (!entry.isIntersecting) {
-                return;
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    entry.target.classList.add(
+                        "is-visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            }
+        );
+
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("reveal");
+
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    /*
+       Fallback for browsers without
+       IntersectionObserver.
+    */
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("is-visible");
+
+    });
+
+}
+
+
+/* =========================================================
+   6. ESC KEY — CLOSE MOBILE MENU
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            navLinks &&
+            navLinks.classList.contains("active")
+        ) {
+
+            navLinks.classList.remove("active");
+
+            if (menuToggle) {
+
+                menuToggle.classList.remove(
+                    "active"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
             }
 
-            entry.target.classList.add("is-visible");
+            document.body.classList.remove(
+                "menu-open"
+            );
 
-            observer.unobserve(entry.target);
+        }
 
-        });
-
-    },
-    {
-        threshold: 0.12
     }
 );
 
-revealElements.forEach((element) => {
 
-    element.classList.add("reveal");
-
-    revealObserver.observe(element);
-
-});
-
-
-// =========================================================
-// 5. CURRENT YEAR LOG
-// =========================================================
+/* =========================================================
+   7. CONSOLE MESSAGE
+========================================================= */
 
 console.log(
     `Abdelrahman Hassoun Portfolio — ${currentYear}`
