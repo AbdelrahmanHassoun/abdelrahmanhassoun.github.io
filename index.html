@@ -548,6 +548,212 @@ body.modal-open {
 }
 </style>
 
+
+<style>
+/* ======================================================
+   BEST STUDENT — PHOTOS & VIDEO GALLERY
+   ====================================================== */
+
+.leadership-card.highlight {
+    position: relative;
+}
+
+.best-student-gallery-trigger {
+    margin-top: 22px;
+}
+
+.best-student-gallery-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 15px;
+    border: 1px solid #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.best-student-gallery-button:hover {
+    transform: translateY(-2px);
+    border-color: #ffffff;
+    background: #ffffff;
+}
+
+.best-student-modal[hidden] {
+    display: none;
+}
+
+.best-student-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2100;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.best-student-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.best-student-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 100%);
+    max-height: min(900px, calc(100vh - 48px));
+    overflow: auto;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: #f7f7f3;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+}
+
+.best-student-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+}
+
+.best-student-modal-kicker {
+    margin: 0 0 8px;
+    color: #5e5e59;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.best-student-modal-title {
+    margin: 0;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.best-student-modal-description {
+    max-width: 720px;
+    margin: 12px 0 0;
+    color: #5e5e59;
+    font-size: 13px;
+}
+
+.best-student-modal-close {
+    flex: 0 0 auto;
+    min-width: 76px;
+    min-height: 42px;
+    padding: 0 14px;
+    border: 1px solid #0a0a0a;
+    background: transparent;
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.best-student-modal-close:hover {
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+.best-student-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding-top: 24px;
+}
+
+.best-student-media-card {
+    overflow: hidden;
+    border: 1px solid rgba(10,10,10,0.12);
+    background: #ffffff;
+}
+
+.best-student-media-card--video {
+    grid-column: 1 / -1;
+    max-width: 520px;
+}
+
+.best-student-media-card img,
+.best-student-media-card video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #111111;
+}
+
+.best-student-media-card--photo img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.best-student-media-card--video video {
+    max-height: 720px;
+    object-fit: contain;
+}
+
+.best-student-media-caption {
+    padding: 12px 14px 14px;
+    color: #5e5e59;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.best-student-media-caption strong {
+    color: #0a0a0a;
+}
+
+body.best-student-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 720px) {
+    .best-student-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .best-student-media-card--video {
+        grid-column: auto;
+        max-width: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .best-student-modal {
+        padding: 12px;
+    }
+
+    .best-student-modal-dialog {
+        max-height: calc(100vh - 24px);
+        padding: 20px;
+    }
+
+    .best-student-modal-header {
+        flex-direction: column;
+    }
+
+    .best-student-gallery-button {
+        width: 100%;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -1703,6 +1909,16 @@ body.modal-open {
                             and Dr. Lubna Muawad.
                         </small>
 
+                        <div class="best-student-gallery-trigger">
+                            <button
+                                type="button"
+                                class="best-student-gallery-button"
+                                data-best-student-gallery
+                            >
+                                View Photos & Video ↗
+                            </button>
+                        </div>
+
                     </div>
 
 
@@ -2515,6 +2731,145 @@ body.modal-open {
             });
         })();
     </script>
+
+
+<!-- ======================================================
+     BEST STUDENT MEDIA MODAL
+     ====================================================== -->
+
+<div class="best-student-modal" id="bestStudentModal" hidden>
+    <div class="best-student-modal-backdrop" data-best-student-close></div>
+
+    <div
+        class="best-student-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bestStudentModalTitle"
+    >
+        <div class="best-student-modal-header">
+            <div>
+                <p class="best-student-modal-kicker">
+                    CULTURAL EXCHANGE & RECOGNITION
+                </p>
+
+                <h2 class="best-student-modal-title" id="bestStudentModalTitle">
+                    Best Student — Selected Moments
+                </h2>
+
+                <p class="best-student-modal-description">
+                    Photos and video from the Arabic Language & Culture
+                    Summer School experience and Best Student recognition.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="best-student-modal-close"
+                data-best-student-close
+            >
+                Close
+            </button>
+        </div>
+
+        <div class="best-student-media-grid">
+
+            <a
+                class="best-student-media-card best-student-media-card--photo"
+                href="assets/work/best-student/best-student-01.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/work/best-student/best-student-01.jpg"
+                    alt="Best Student recognition moment at the German Jordanian University"
+                    loading="lazy"
+                >
+                <div class="best-student-media-caption">
+                    <strong>Recognition Moment</strong> · Photo
+                </div>
+            </a>
+
+            <a
+                class="best-student-media-card best-student-media-card--photo"
+                href="assets/work/best-student/best-student-02.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/work/best-student/best-student-02.jpg"
+                    alt="Best Student certificate moment during the cultural exchange program"
+                    loading="lazy"
+                >
+                <div class="best-student-media-caption">
+                    <strong>Certificate Moment</strong> · Photo
+                </div>
+            </a>
+
+            <div class="best-student-media-card best-student-media-card--video">
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/work/best-student/best-student-video-poster.jpg"
+                >
+                    <source
+                        src="assets/work/best-student/best-student-video.mp4"
+                        type="video/mp4"
+                    >
+                    Your browser does not support the video element.
+                </video>
+
+                <div class="best-student-media-caption">
+                    <strong>Cultural Exchange Event</strong> · Video
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const modal = document.getElementById("bestStudentModal");
+    const openButton = document.querySelector("[data-best-student-gallery]");
+    const closeButtons = document.querySelectorAll("[data-best-student-close]");
+
+    if (!modal || !openButton) {
+        return;
+    }
+
+    const closeModal = () => {
+        modal.hidden = true;
+        document.body.classList.remove("best-student-modal-open");
+
+        const video = modal.querySelector("video");
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    };
+
+    openButton.addEventListener("click", () => {
+        modal.hidden = false;
+        document.body.classList.add("best-student-modal-open");
+
+        const closeButton = modal.querySelector(".best-student-modal-close");
+        if (closeButton) {
+            closeButton.focus();
+        }
+    });
+
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) {
+            closeModal();
+        }
+    });
+})();
+</script>
 
 </body>
 </html>
