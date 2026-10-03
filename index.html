@@ -268,7 +268,84 @@ body.modal-open {
         grid-template-columns: 1fr;
     }
 }
-</style><style>
+</style>
+<style>
+/* ======================================================
+   PROJECT 01 — REPORT + LINKEDIN ACTIONS
+   ====================================================== */
+
+.project-card.featured.project-clickable {
+    position: relative;
+    cursor: pointer;
+}
+
+.project-card.featured.project-clickable .project-content {
+    position: relative;
+    z-index: 3;
+}
+
+.project-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+}
+
+.project-actions {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.project-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 15px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.project-action:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+.project-action-primary {
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+.project-action-primary:hover {
+    border-color: #ffffff;
+    background: #ffffff;
+}
+
+@media (max-width: 560px) {
+    .project-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .project-action {
+        width: 100%;
+    }
+}
+</style>
+<style>
 
 /* ======================================================
    INTERACTIVE VIDEO WORK MODAL
@@ -1066,7 +1143,15 @@ body.modal-open {
 
                     <!-- PROJECT 01 -->
 
-                    <article class="project-card featured">
+                    <article class="project-card featured project-clickable">
+
+                        <a
+                            class="project-card-overlay"
+                            href="assets/work/sport-health-report.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Open the Sports Fanaticism and Smoking Behavior project report"
+                        ></a>
 
                         <div class="project-number">
                             01
@@ -1117,6 +1202,28 @@ body.modal-open {
 
                             <div class="role-badge">
                                 Group Leader
+                            </div>
+
+                            <div class="project-actions">
+
+                                <a
+                                    class="project-action project-action-primary"
+                                    href="assets/work/sport-health-report.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Project Report ↗
+                                </a>
+
+                                <a
+                                    class="project-action"
+                                    href="https://www.linkedin.com/in/abdelrahman-hassoun/details/projects/edit/forms/2098605478/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Project on LinkedIn ↗
+                                </a>
+
                             </div>
 
                         </div>
