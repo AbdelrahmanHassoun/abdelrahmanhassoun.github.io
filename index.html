@@ -754,6 +754,213 @@ body.best-student-modal-open {
 }
 </style>
 
+
+<style>
+/* ======================================================
+   CROSS-CULTURAL COMMUNICATION — MEDIA GALLERY
+   ====================================================== */
+
+.cross-cultural-card {
+    position: relative;
+}
+
+.cross-cultural-gallery-trigger {
+    margin-top: 22px;
+}
+
+.cross-cultural-gallery-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 15px;
+    border: 1px solid #0a0a0a;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.cross-cultural-gallery-button:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+.cross-cultural-modal[hidden] {
+    display: none;
+}
+
+.cross-cultural-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2150;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.cross-cultural-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.cross-cultural-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 100%);
+    max-height: min(900px, calc(100vh - 48px));
+    overflow: auto;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: #f7f7f3;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+}
+
+.cross-cultural-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+}
+
+.cross-cultural-modal-kicker {
+    margin: 0 0 8px;
+    color: #5e5e59;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.cross-cultural-modal-title {
+    margin: 0;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.cross-cultural-modal-description {
+    max-width: 720px;
+    margin: 12px 0 0;
+    color: #5e5e59;
+    font-size: 13px;
+}
+
+.cross-cultural-modal-close {
+    flex: 0 0 auto;
+    min-width: 76px;
+    min-height: 42px;
+    padding: 0 14px;
+    border: 1px solid #0a0a0a;
+    background: transparent;
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.cross-cultural-modal-close:hover {
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+.cross-cultural-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding-top: 24px;
+}
+
+.cross-cultural-media-card {
+    overflow: hidden;
+    border: 1px solid rgba(10,10,10,0.12);
+    background: #ffffff;
+}
+
+.cross-cultural-media-card--video {
+    grid-column: 1 / -1;
+    max-width: 520px;
+}
+
+.cross-cultural-media-card img,
+.cross-cultural-media-card video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #111111;
+}
+
+.cross-cultural-media-card--photo img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.cross-cultural-media-card--video video {
+    max-height: 720px;
+    object-fit: contain;
+}
+
+.cross-cultural-media-caption {
+    padding: 12px 14px 14px;
+    color: #5e5e59;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cross-cultural-media-caption strong {
+    color: #0a0a0a;
+}
+
+body.cross-cultural-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 720px) {
+    .cross-cultural-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cross-cultural-media-card--video {
+        grid-column: auto;
+        max-width: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .cross-cultural-modal {
+        padding: 12px;
+    }
+
+    .cross-cultural-modal-dialog {
+        max-height: calc(100vh - 24px);
+        padding: 20px;
+    }
+
+    .cross-cultural-modal-header {
+        flex-direction: column;
+    }
+
+    .cross-cultural-gallery-button {
+        width: 100%;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -1922,7 +2129,7 @@ body.best-student-modal-open {
                     </div>
 
 
-                    <div class="leadership-card">
+                    <div class="leadership-card cross-cultural-card">
 
                         <span class="leadership-number">
                             03
@@ -1937,6 +2144,16 @@ body.best-student-modal-open {
                             Jordanian culture and engaging in intercultural
                             communication.
                         </p>
+
+                        <div class="cross-cultural-gallery-trigger">
+                            <button
+                                type="button"
+                                class="cross-cultural-gallery-button"
+                                data-cross-cultural-gallery
+                            >
+                                View Photos & Video ↗
+                            </button>
+                        </div>
 
                     </div>
 
@@ -2857,6 +3074,157 @@ body.best-student-modal-open {
         if (closeButton) {
             closeButton.focus();
         }
+    });
+
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) {
+            closeModal();
+        }
+    });
+})();
+</script>
+
+
+<!-- ======================================================
+     CROSS-CULTURAL COMMUNICATION MEDIA MODAL
+     ====================================================== -->
+
+<div class="cross-cultural-modal" id="crossCulturalModal" hidden>
+    <div class="cross-cultural-modal-backdrop" data-cross-cultural-close></div>
+
+    <div
+        class="cross-cultural-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="crossCulturalModalTitle"
+    >
+        <div class="cross-cultural-modal-header">
+            <div>
+                <p class="cross-cultural-modal-kicker">
+                    CROSS-CULTURAL COMMUNICATION
+                </p>
+
+                <h2 class="cross-cultural-modal-title" id="crossCulturalModalTitle">
+                    Cultural Exchange — Selected Moments
+                </h2>
+
+                <p class="cross-cultural-modal-description">
+                    Photos and video documenting cultural exchange,
+                    Jordanian culture, and shared experiences during the program.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="cross-cultural-modal-close"
+                data-cross-cultural-close
+            >
+                Close
+            </button>
+        </div>
+
+        <div class="cross-cultural-media-grid">
+
+            <a
+                class="cross-cultural-media-card cross-cultural-media-card--photo"
+                href="assets/work/cross-cultural/cross-cultural-01.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/work/cross-cultural/cross-cultural-01.jpg"
+                    alt="Cultural exchange group activity in Jordan"
+                    loading="lazy"
+                >
+                <div class="cross-cultural-media-caption">
+                    <strong>Cultural Exchange</strong> · Photo
+                </div>
+            </a>
+
+            <a
+                class="cross-cultural-media-card cross-cultural-media-card--photo"
+                href="assets/work/cross-cultural/cross-cultural-02.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/work/cross-cultural/cross-cultural-02.jpg"
+                    alt="Cultural exchange moment with a German participant"
+                    loading="lazy"
+                >
+                <div class="cross-cultural-media-caption">
+                    <strong>Shared Experience</strong> · Photo
+                </div>
+            </a>
+
+            <a
+                class="cross-cultural-media-card cross-cultural-media-card--photo"
+                href="assets/work/cross-cultural/cross-cultural-03.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/work/cross-cultural/cross-cultural-03.jpg"
+                    alt="Jordanian hospitality and cultural exchange gathering"
+                    loading="lazy"
+                >
+                <div class="cross-cultural-media-caption">
+                    <strong>Jordanian Hospitality</strong> · Photo
+                </div>
+            </a>
+
+            <div class="cross-cultural-media-card cross-cultural-media-card--video">
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/work/cross-cultural/cross-cultural-video-poster.jpg"
+                >
+                    <source
+                        src="assets/work/cross-cultural/cross-cultural-video.mp4"
+                        type="video/mp4"
+                    >
+                    Your browser does not support the video element.
+                </video>
+
+                <div class="cross-cultural-media-caption">
+                    <strong>Cultural Exchange Event</strong> · Video
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const modal = document.getElementById("crossCulturalModal");
+    const openButton = document.querySelector("[data-cross-cultural-gallery]");
+    const closeButtons = document.querySelectorAll("[data-cross-cultural-close]");
+
+    if (!modal || !openButton) return;
+
+    const closeModal = () => {
+        modal.hidden = true;
+        document.body.classList.remove("cross-cultural-modal-open");
+
+        const video = modal.querySelector("video");
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    };
+
+    openButton.addEventListener("click", () => {
+        modal.hidden = false;
+        document.body.classList.add("cross-cultural-modal-open");
+
+        const closeButton = modal.querySelector(".cross-cultural-modal-close");
+        if (closeButton) closeButton.focus();
     });
 
     closeButtons.forEach((button) => {
