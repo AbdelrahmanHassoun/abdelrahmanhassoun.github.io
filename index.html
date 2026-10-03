@@ -451,6 +451,63 @@ body.modal-open {
 </style>
 
 </style>
+
+<style>
+/* ======================================================
+   ASPIRE PROGRAM ACTIONS
+   ====================================================== */
+
+.aspire-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.aspire-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 15px;
+    border: 1px solid #0a0a0a;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.aspire-action:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    color: #0a0a0a;
+}
+
+.aspire-action-primary {
+    background: #ffffff;
+    color: #0a0a0a;
+}
+
+.aspire-action-primary:hover {
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+@media (max-width: 560px) {
+    .aspire-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .aspire-action {
+        width: 100%;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -1488,6 +1545,37 @@ body.modal-open {
                                 Successfully completed all required
                                 modules and the final assessment.
                             </span>
+
+                        </div>
+
+                        <div class="aspire-actions">
+
+                            <a
+                                class="aspire-action aspire-action-primary"
+                                href="https://engage.aspireleaders.org/share/certificate/did%3Arcw%3A14956243-992d-4383-b825-37325431ce1b"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Certificate ↗
+                            </a>
+
+                            <a
+                                class="aspire-action"
+                                href="https://engage.aspireleaders.org/share/certificate/did%3Arcw%3A8f86ffda-ec17-40d1-b5a2-a4f81aec952b"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Completion Proof ↗
+                            </a>
+
+                            <a
+                                class="aspire-action"
+                                href="https://www.linkedin.com/posts/abdelrahman-hassoun_aspireinspire-activity-7479064114980478976-48gq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAGR0DNIBfaK7VP4Q_ZShPpMxR6QT8KC-X-Q"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View LinkedIn Post ↗
+                            </a>
 
                         </div>
 
