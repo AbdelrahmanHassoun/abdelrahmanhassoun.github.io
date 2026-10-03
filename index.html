@@ -1119,6 +1119,177 @@ body.cross-cultural-modal-open {
 }
 </style>
 
+
+<style>
+/* ======================================================
+   ARABIC LANGUAGE & CULTURE — PHOTO GALLERY
+   ====================================================== */
+
+.arabic-culture-card {
+    position: relative;
+}
+
+.arabic-culture-gallery-trigger {
+    margin-top: 22px;
+}
+
+.arabic-culture-gallery-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 15px;
+    border: 1px solid #0a0a0a;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 220ms ease, background 220ms ease,
+                color 220ms ease, border-color 220ms ease;
+}
+
+.arabic-culture-gallery-button:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+.arabic-culture-modal[hidden] {
+    display: none;
+}
+
+.arabic-culture-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2180;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.arabic-culture-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.arabic-culture-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 100%);
+    max-height: min(900px, calc(100vh - 48px));
+    overflow: auto;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: #f7f7f3;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+}
+
+.arabic-culture-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+}
+
+.arabic-culture-modal-kicker {
+    margin: 0 0 8px;
+    color: #5e5e59;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.arabic-culture-modal-title {
+    margin: 0;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.arabic-culture-modal-close {
+    flex: 0 0 auto;
+    min-width: 76px;
+    min-height: 42px;
+    padding: 0 14px;
+    border: 1px solid #0a0a0a;
+    background: transparent;
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.arabic-culture-modal-close:hover {
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+.arabic-culture-photo-card {
+    overflow: hidden;
+    margin-top: 24px;
+    border: 1px solid rgba(10,10,10,0.12);
+    background: #ffffff;
+}
+
+.arabic-culture-photo-card a,
+.arabic-culture-photo-card img {
+    display: block;
+    width: 100%;
+}
+
+.arabic-culture-photo-card img {
+    height: auto;
+}
+
+.arabic-culture-photo-caption {
+    padding: 12px 14px 14px;
+    color: #5e5e59;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.arabic-culture-photo-caption strong {
+    color: #0a0a0a;
+}
+
+body.arabic-culture-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 560px) {
+    .arabic-culture-modal {
+        padding: 12px;
+    }
+
+    .arabic-culture-modal-dialog {
+        max-height: calc(100vh - 24px);
+        padding: 20px;
+    }
+
+    .arabic-culture-modal-header {
+        flex-direction: column;
+    }
+
+    .arabic-culture-gallery-button {
+        width: 100%;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -2282,7 +2453,7 @@ body.cross-cultural-modal-open {
 
                 <div class="leadership-grid">
 
-                    <div class="leadership-card">
+                    <div class="leadership-card arabic-culture-card">
 
                         <span class="leadership-number">
                             01
@@ -2297,6 +2468,16 @@ body.cross-cultural-modal-open {
                             Summer School and worked as a cultural exchange
                             partner with German students.
                         </p>
+
+                        <div class="arabic-culture-gallery-trigger">
+                            <button
+                                type="button"
+                                class="arabic-culture-gallery-button"
+                                data-arabic-culture-gallery
+                            >
+                                View Photo ↗
+                            </button>
+                        </div>
 
                     </div>
 
@@ -3439,6 +3620,93 @@ body.cross-cultural-modal-open {
         document.body.classList.add("cross-cultural-modal-open");
 
         const closeButton = modal.querySelector(".cross-cultural-modal-close");
+        if (closeButton) closeButton.focus();
+    });
+
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) {
+            closeModal();
+        }
+    });
+})();
+</script>
+
+
+<!-- ======================================================
+     ARABIC LANGUAGE & CULTURE PHOTO MODAL
+     ====================================================== -->
+
+<div class="arabic-culture-modal" id="arabicCultureModal" hidden>
+    <div class="arabic-culture-modal-backdrop" data-arabic-culture-close></div>
+
+    <div
+        class="arabic-culture-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="arabicCultureModalTitle"
+    >
+        <div class="arabic-culture-modal-header">
+            <div>
+                <p class="arabic-culture-modal-kicker">
+                    CULTURAL EXCHANGE
+                </p>
+
+                <h2 class="arabic-culture-modal-title" id="arabicCultureModalTitle">
+                    Arabic Language & Culture — Group Moment
+                </h2>
+            </div>
+
+            <button
+                type="button"
+                class="arabic-culture-modal-close"
+                data-arabic-culture-close
+            >
+                Close
+            </button>
+        </div>
+
+        <div class="arabic-culture-photo-card">
+            <a
+                href="assets/work/arabic-language-culture/arabic-language-culture-01.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/work/arabic-language-culture/arabic-language-culture-01.jpg"
+                    alt="Arabic Language and Culture Summer School group photo"
+                    loading="lazy"
+                >
+            </a>
+
+            <div class="arabic-culture-photo-caption">
+                <strong>Arabic Language & Culture Summer School</strong> · Photo
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const modal = document.getElementById("arabicCultureModal");
+    const openButton = document.querySelector("[data-arabic-culture-gallery]");
+    const closeButtons = document.querySelectorAll("[data-arabic-culture-close]");
+
+    if (!modal || !openButton) return;
+
+    const closeModal = () => {
+        modal.hidden = true;
+        document.body.classList.remove("arabic-culture-modal-open");
+    };
+
+    openButton.addEventListener("click", () => {
+        modal.hidden = false;
+        document.body.classList.add("arabic-culture-modal-open");
+
+        const closeButton = modal.querySelector(".arabic-culture-modal-close");
         if (closeButton) closeButton.focus();
     });
 
