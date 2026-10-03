@@ -508,6 +508,46 @@ body.modal-open {
 }
 </style>
 
+
+<style>
+/* ======================================================
+   MLC EVENT — LINKEDIN ACTION
+   ====================================================== */
+
+.event-actions {
+    margin-top: 18px;
+}
+
+.event-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 15px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.event-action:hover {
+    transform: translateY(-2px);
+    border-color: #c7ff3d;
+    background: #c7ff3d;
+    color: #0a0a0a;
+}
+
+@media (max-width: 560px) {
+    .event-action {
+        width: 100%;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -903,6 +943,19 @@ body.modal-open {
                             <p>
                                 24–25 July 2026 · Haya Cultural Center · Amman
                             </p>
+
+                        </div>
+
+                        <div class="event-actions">
+
+                            <a
+                                class="event-action"
+                                href="https://www.linkedin.com/posts/abdelrahman-hassoun_koica-peko-modernlanguagecenter-activity-7486740041973579776-NhjZ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View on LinkedIn ↗
+                            </a>
 
                         </div>
 
