@@ -197,6 +197,114 @@
 }
 </style>
 
+
+<style>
+/* ======================================================
+   LANGUAGE LIBRARY — PROFESSIONAL IMAGE GALLERY
+   ====================================================== */
+
+.work-modal-dialog {
+    width: min(1180px, 100%);
+    max-height: calc(100vh - 40px);
+    padding: 28px;
+}
+
+.work-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    padding-top: 24px;
+}
+
+.work-modal-item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(10, 10, 10, 0.12);
+    background: #ffffff;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.work-modal-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(10, 10, 10, 0.26);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.work-modal-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+    background: #ecece7;
+    transition: transform 260ms ease;
+}
+
+.work-modal-item:hover img {
+    transform: scale(1.012);
+}
+
+.work-modal-item-label {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #ffffff;
+    color: #5e5e59;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.work-modal-item-label strong {
+    color: #0a0a0a;
+}
+
+@media (max-width: 980px) {
+    .work-modal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .work-modal-dialog {
+        max-height: calc(100vh - 28px);
+        padding: 20px;
+    }
+
+    .work-modal-header {
+        flex-direction: column;
+    }
+
+    .work-modal-item img {
+        aspect-ratio: 2 / 3;
+    }
+}
+
+@media (max-width: 560px) {
+    .work-modal {
+        padding: 12px;
+    }
+
+    .work-modal-dialog {
+        max-height: calc(100vh - 24px);
+        padding: 18px;
+    }
+
+    .work-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .work-modal-item-label {
+        font-size: 8px;
+    }
+}
+</style>
+
 </head>
 <body>
 
