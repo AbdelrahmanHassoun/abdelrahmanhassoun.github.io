@@ -1791,159 +1791,6 @@ body.arabic-culture-modal-open {
 }
 </style>
 
-
-<style>
-/* ======================================================
-   LANGUAGE CONTENT LIBRARY — HOMEPAGE PREVIEW
-   ====================================================== */
-
-.language-library-preview-section {
-    overflow: hidden;
-}
-
-.language-library-preview {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-    gap: 48px;
-    align-items: stretch;
-    padding: 42px;
-    border: 1px solid rgba(10, 10, 10, 0.13);
-    background: #eeeeea;
-}
-
-.language-library-preview-copy h3 {
-    margin: 0;
-    max-width: 620px;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
-}
-
-.language-library-preview-copy > p:not(.project-category) {
-    max-width: 630px;
-    margin: 22px 0 0;
-    color: #5e5e59;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.language-library-mini-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    max-width: 650px;
-    margin-top: 28px;
-}
-
-.language-library-mini-grid span {
-    padding: 10px 12px;
-    border: 1px solid rgba(10, 10, 10, 0.13);
-    background: #f7f7f3;
-    color: #33332f;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.language-library-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    margin-top: 28px;
-    padding: 0 17px;
-    border: 1px solid #0a0a0a;
-    background: #0a0a0a;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    transition: transform 220ms ease, background 220ms ease, color 220ms ease;
-}
-
-.language-library-button:hover {
-    transform: translateY(-2px);
-    background: #c7f000;
-    color: #0a0a0a;
-}
-
-.language-library-preview-card {
-    display: flex;
-    flex-direction: column;
-    min-height: 320px;
-    padding: 26px;
-    border: 1px solid #0a0a0a;
-    background:
-        radial-gradient(circle at 85% 15%, rgba(199, 240, 0, 0.22), transparent 34%),
-        #f7f7f3;
-}
-
-.language-library-preview-top,
-.language-library-preview-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    color: #5e5e59;
-    font-size: 9px;
-    font-weight: 900;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.language-library-code-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    margin: auto 0;
-}
-
-.language-library-code-grid span {
-    display: grid;
-    place-items: center;
-    aspect-ratio: 1 / 1;
-    border: 1px solid rgba(10, 10, 10, 0.15);
-    background: #0a0a0a;
-    color: #c7f000;
-    font-size: clamp(18px, 3vw, 30px);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-}
-
-.language-library-preview-footer {
-    padding-top: 18px;
-    border-top: 1px solid rgba(10, 10, 10, 0.12);
-}
-
-@media (max-width: 820px) {
-    .language-library-preview {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 28px;
-    }
-
-    .language-library-mini-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 560px) {
-    .language-library-preview {
-        padding: 22px;
-    }
-
-    .language-library-mini-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .language-library-button {
-        width: 100%;
-    }
-}
-</style>
-
 </head>
 
 <body>
@@ -2333,7 +2180,7 @@ body.arabic-culture-modal-open {
 
                                 <a
                                     class="experience-highlight-action"
-                                    href="#korean-language-content"
+                                    href="language-content.html"
                                 >
                                     View My Language Content ↗
                                 </a>
@@ -2415,7 +2262,7 @@ body.arabic-culture-modal-open {
              AI & DIGITAL CONTENT
         ========================== -->
 
-        <section id="work" class="section language-library-preview-section">
+        <section id="work" class="section">
 
             <div class="container">
 
@@ -2431,71 +2278,340 @@ body.arabic-culture-modal-open {
                     </h2>
 
                     <p class="section-intro">
-                        A growing library of multilingual language-learning
-                        content developed through visual storytelling,
-                        AI-assisted creation, and context-based communication.
+                        A selection of language-learning content developed
+                        through visual storytelling, AI-assisted creation,
+                        and context-based communication.
                     </p>
 
                 </div>
 
-                <div class="language-library-preview">
+                <!-- =========================
+                     KOREAN
+                ========================== -->
 
-                    <div class="language-library-preview-copy">
+                <article class="language-showcase" id="korean-language-content">
+
+                    <div class="language-info">
 
                         <p class="project-category">
-                            LANGUAGE CONTENT LIBRARY
+                            KOREAN LANGUAGE CONTENT
                         </p>
 
                         <h3>
-                            One place for all my language work.
+                            Natural Korean Expressions
                         </h3>
 
                         <p>
-                            Explore my selected daily language content by language.
-                            Korean, English, Spanish, German, French, Chinese, and Turkish
-                            work are organized in one dedicated library so the
-                            main portfolio stays focused and easy to navigate.
+                            A visual language-learning series presenting
+                            everyday Korean expressions and more natural
+                            conversational alternatives.
                         </p>
 
-                        <div class="language-library-mini-grid">
-                            <span>KR · Korean</span>
-                            <span>EN · English</span>
-                            <span>ES · Spanish</span>
-                            <span>DE · German</span>
-                            <span>FR · French</span>
-                            <span>ZH · Chinese</span>
-                            <span>TR · Turkish</span>
+                        <div class="language-tags">
+                            <span>AI-Assisted Visuals</span>
+                            <span>Language Learning</span>
+                            <span>Arabic Support</span>
                         </div>
-
-                        <a class="language-library-button" href="language-content.html">
-                            Explore My Language Work ↗
-                        </a>
 
                     </div>
 
-                    <div class="language-library-preview-card" aria-hidden="true">
-                        <div class="language-library-preview-top">
-                            <span>LANGUAGE LIBRARY</span>
-                            <span>07 LANGUAGES</span>
+                    <div class="language-work-card">
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">KR</span>
+                            <span class="language-work-count">04 selected designs</span>
                         </div>
 
-                        <div class="language-library-code-grid">
-                            <span>KR</span>
-                            <span>EN</span>
-                            <span>ES</span>
-                            <span>DE</span>
-                            <span>FR</span>
-                            <span>ZH</span>
-                            <span>TR</span>
-                        </div>
+                        <h4>Explore the Korean visual series.</h4>
 
-                        <div class="language-library-preview-footer">
-                            <span>Selected visual work</span>
-                            <span>Open library →</span>
-                        </div>
+                        <p>
+                            View the language-learning designs developed for
+                            the Korean content series.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-gallery="korean"
+                        >
+                            View My Work / Designs ↗
+                        </button>
                     </div>
 
-                </div>
+                </article>
+
+                <!-- =========================
+                     ENGLISH
+                ========================== -->
+
+                <article class="language-showcase reverse">
+
+                    <div class="language-info">
+
+                        <p class="project-category">
+                            ENGLISH LANGUAGE CONTENT
+                        </p>
+
+                        <h3>
+                            English Through Conversation
+                        </h3>
+
+                        <p>
+                            A scenario-based English series using short
+                            conversations to introduce natural expressions
+                            in context rather than presenting isolated
+                            vocabulary.
+                        </p>
+
+                        <div class="language-tags">
+                            <span>Conversation</span>
+                            <span>Context</span>
+                            <span>AI-Assisted Visuals</span>
+                        </div>
+
+                    </div>
+
+                    <div class="language-work-card">
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">EN</span>
+                            <span class="language-work-count">03 selected designs</span>
+                        </div>
+
+                        <h4>Explore the English visual series.</h4>
+
+                        <p>
+                            View the conversational English designs created
+                            for language-learning content.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-gallery="english"
+                        >
+                            View My Work / Designs ↗
+                        </button>
+                    </div>
+
+                </article>
+
+                <!-- =========================
+                     SPANISH
+                ========================== -->
+
+                <article class="language-showcase">
+
+                    <div class="language-info">
+
+                        <p class="project-category">
+                            SPANISH LANGUAGE CONTENT
+                        </p>
+
+                        <h3>
+                            Context-Based Language Learning
+                        </h3>
+
+                        <p>
+                            A conversational content format where two
+                            characters interact naturally and the language
+                            expression is introduced through the dialogue.
+                        </p>
+
+                        <div class="concept-flow">
+                            <span>Context</span>
+                            <b>→</b>
+                            <span>Conversation</span>
+                            <b>→</b>
+                            <span>Expression</span>
+                            <b>→</b>
+                            <span>Meaning</span>
+                        </div>
+
+                    </div>
+
+                    <div class="language-work-card">
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">ES</span>
+                            <span class="language-work-count">04 selected designs</span>
+                        </div>
+
+                        <h4>Explore the Spanish visual series.</h4>
+
+                        <p>
+                            View the dialogue-based Spanish designs built
+                            around context and natural conversation.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-gallery="spanish"
+                        >
+                            View My Work / Designs ↗
+                        </button>
+                    </div>
+
+                </article>
+
+                <!-- =========================
+                     GERMAN
+                ========================== -->
+
+                <article class="language-showcase reverse">
+
+                    <div class="language-info">
+
+                        <p class="project-category">
+                            GERMAN LANGUAGE CONTENT
+                        </p>
+
+                        <h3>
+                            German Language Learning
+                        </h3>
+
+                        <p>
+                            German language content connected to my academic
+                            background and ongoing language development.
+                        </p>
+
+                        <div class="language-tags">
+                            <span>German</span>
+                            <span>Language Learning</span>
+                            <span>Academic Background</span>
+                        </div>
+
+                    </div>
+
+                    <div class="language-work-card">
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">DE</span>
+                            <span class="language-work-count">07 selected designs</span>
+                        </div>
+
+                        <h4>Explore the German visual series.</h4>
+
+                        <p>
+                            View the German language-learning designs included
+                            in my visual content work.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-gallery="german"
+                        >
+                            View My Work / Designs ↗
+                        </button>
+                    </div>
+
+                </article>
+
+                <!-- =========================
+                     FRENCH
+                ========================== -->
+
+                <article class="language-showcase">
+
+                    <div class="language-info">
+
+                        <p class="project-category">
+                            FRENCH LANGUAGE CONTENT
+                        </p>
+
+                        <h3>
+                            Natural French Expressions
+                        </h3>
+
+                        <p>
+                            A visual language-learning series presenting
+                            everyday French expressions and more natural
+                            conversational alternatives.
+                        </p>
+
+                        <div class="language-tags">
+                            <span>French</span>
+                            <span>Language Learning</span>
+                            <span>Arabic Support</span>
+                        </div>
+
+                    </div>
+
+                    <div class="language-work-card">
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">FR</span>
+                            <span class="language-work-count">03 selected designs</span>
+                        </div>
+
+                        <h4>Explore the French visual series.</h4>
+
+                        <p>
+                            View the French language-learning designs created
+                            for the visual content series.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-gallery="french"
+                        >
+                            View My Work / Designs ↗
+                        </button>
+                    </div>
+
+                </article>
+
+                <!-- =========================
+                     CHINESE
+                ========================== -->
+
+                <article class="language-showcase reverse">
+
+                    <div class="language-info">
+
+                        <p class="project-category">
+                            CHINESE LANGUAGE CONTENT
+                        </p>
+
+                        <h3>
+                            Natural Chinese Expressions
+                        </h3>
+
+                        <p>
+                            A visual language-learning series presenting
+                            everyday Chinese expressions and more natural
+                            conversational alternatives.
+                        </p>
+
+                        <div class="language-tags">
+                            <span>Chinese</span>
+                            <span>Language Learning</span>
+                            <span>Arabic Support</span>
+                        </div>
+
+                    </div>
+
+                    <div class="language-work-card">
+                        <div class="language-work-card-top">
+                            <span class="language-work-code">ZH</span>
+                            <span class="language-work-count">03 selected designs</span>
+                        </div>
+
+                        <h4>Explore the Chinese visual series.</h4>
+
+                        <p>
+                            View the Chinese language-learning designs created
+                            for the visual content series.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="language-work-button"
+                            data-gallery="chinese"
+                        >
+                            View My Work / Designs ↗
+                        </button>
+                    </div>
+
+                </article>
 
                 <!-- =========================
                      AI VISUAL CONTENT
@@ -2525,7 +2641,7 @@ body.arabic-culture-modal-open {
 
                         <div class="language-work-card-top">
                             <span class="language-work-code">VIDEO</span>
-                            <span class="language-work-count">05 selected videos</span>
+                            <span class="language-work-count">04 selected videos</span>
                         </div>
 
                         <h4>
@@ -3523,6 +3639,57 @@ body.arabic-culture-modal-open {
 
 
     <!-- =========================
+         LANGUAGE WORK MODAL
+    ========================== -->
+
+    <div class="work-modal" id="workModal" hidden>
+
+        <div class="work-modal-backdrop" data-close-work-modal></div>
+
+        <div
+            class="work-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="workModalTitle"
+            tabindex="-1"
+        >
+
+            <div class="work-modal-header">
+
+                <div>
+                    <p class="work-modal-kicker" id="workModalKicker">
+                        SELECTED VISUAL WORK
+                    </p>
+
+                    <h2 class="work-modal-title" id="workModalTitle">
+                        Language Designs
+                    </h2>
+
+                    <p class="work-modal-description" id="workModalDescription">
+                        Selected visual content from my language-learning work.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="work-modal-close"
+                    id="workModalClose"
+                    aria-label="Close work gallery"
+                >
+                    Close
+                </button>
+
+            </div>
+
+            <div class="work-modal-grid" id="workModalGrid"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
          VIDEO WORK MODAL
     ========================== -->
 
@@ -3573,7 +3740,114 @@ body.arabic-culture-modal-open {
 
     <script src="script.js"></script>
 
+    <script>
+        (function () {
+            const modal = document.getElementById("workModal");
+            const modalDialog = modal ? modal.querySelector(".work-modal-dialog") : null;
+            const modalClose = document.getElementById("workModalClose");
+            const modalGrid = document.getElementById("workModalGrid");
+            const modalKicker = document.getElementById("workModalKicker");
+            const modalTitle = document.getElementById("workModalTitle");
+            const modalDescription = document.getElementById("workModalDescription");
 
+            const galleries = {
+                korean: {
+                    code: "KR",
+                    label: "KOREAN LANGUAGE CONTENT",
+                    title: "Natural Korean Expressions",
+                    description: "Selected Korean language-learning designs developed as part of my AI-assisted visual content work.",
+                    images: ["korean-01.webp", "korean-02.webp", "korean-03.webp", "korean-04.webp"]
+                },
+                english: {
+                    code: "EN",
+                    label: "ENGLISH LANGUAGE CONTENT",
+                    title: "English Through Conversation",
+                    description: "Selected English conversational designs created to present natural expressions in context.",
+                    images: ["english-01.webp", "english-02.webp", "english-03.webp"]
+                },
+                spanish: {
+                    code: "ES",
+                    label: "SPANISH LANGUAGE CONTENT",
+                    title: "Context-Based Language Learning",
+                    description: "Selected Spanish dialogue designs built around context, conversation, expression, and meaning.",
+                    images: ["spanish-01.webp", "spanish-02.webp", "spanish-03.webp", "spanish-04.webp"]
+                },
+                german: {
+                    code: "DE",
+                    label: "GERMAN LANGUAGE CONTENT",
+                    title: "German Language Learning",
+                    description: "Selected German language-learning designs connected to my academic and ongoing language development.",
+                    images: ["german-01.webp", "german-02.webp", "german-03.webp", "german-04.webp", "german-05.webp", "german-06.webp", "german-07.webp"]
+                },
+                french: {
+                    code: "FR",
+                    label: "FRENCH LANGUAGE CONTENT",
+                    title: "Natural French Expressions",
+                    description: "Selected French language-learning designs presenting everyday expressions and more natural conversational alternatives.",
+                    images: ["french-01.webp", "french-02.webp", "french-03.webp"]
+                },
+                chinese: {
+                    code: "ZH",
+                    label: "CHINESE LANGUAGE CONTENT",
+                    title: "Natural Chinese Expressions",
+                    description: "Selected Chinese language-learning designs presenting everyday expressions and more natural conversational alternatives.",
+                    images: ["chinese-01.webp", "chinese-02.webp", "chinese-03.webp"]
+                }
+            };
+
+            function openGallery(key) {
+                const gallery = galleries[key];
+                if (!gallery || !modal || !modalGrid) return;
+
+                modalKicker.textContent = gallery.label;
+                modalTitle.textContent = gallery.title;
+                modalDescription.textContent = gallery.description;
+                modalGrid.innerHTML = gallery.images.map(function (filename, index) {
+                    const number = String(index + 1).padStart(2, "0");
+                    const path = "assets/work/" + key + "/" + filename;
+                    return `
+                        <a class="work-modal-item" href="${path}" target="_blank" rel="noopener noreferrer">
+                            <img src="${path}" alt="${gallery.title} — design ${number}" loading="eager" decoding="async">
+                            <span class="work-modal-item-label">
+                                <strong>Design ${number}</strong>
+                                <span>Open Full Size ↗</span>
+                            </span>
+                        </a>
+                    `;
+                }).join("");
+
+                modal.hidden = false;
+                document.body.classList.add("modal-open");
+                modalDialog.focus();
+                modalClose.focus();
+            }
+
+            function closeGallery() {
+                if (!modal) return;
+                modal.hidden = true;
+                document.body.classList.remove("modal-open");
+                if (modalGrid) modalGrid.innerHTML = "";
+            }
+
+            document.querySelectorAll("[data-gallery]").forEach(function (button) {
+                button.addEventListener("click", function () {
+                    openGallery(button.dataset.gallery);
+                });
+            });
+
+            if (modalClose) modalClose.addEventListener("click", closeGallery);
+
+            document.querySelectorAll("[data-close-work-modal]").forEach(function (element) {
+                element.addEventListener("click", closeGallery);
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && modal && !modal.hidden) {
+                    closeGallery();
+                }
+            });
+        })();
+    </script>
 
 
 
@@ -3612,14 +3886,7 @@ body.arabic-culture-modal-open {
                     description: "Language-center video content featuring an AI presenter.",
                     file: "mlc-language-video.mp4",
                     poster: "mlc-language-video.jpg"
-                },
-                {
-                    label: "MLC · PROMOTIONAL CONTENT",
-                    title: "English Courses — Starting 25 October 2026",
-                    description: "Promotional announcement for English language courses starting on 25 October 2026 at the Modern Language Center.",
-                    file: "english-courses-october-2026.mp4",
-                    poster: "english-courses-october-2026.jpg"
-                },
+                }
             ];
 
             function renderVideos() {
