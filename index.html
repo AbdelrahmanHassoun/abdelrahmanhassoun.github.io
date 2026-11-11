@@ -1944,9 +1944,76 @@ body.arabic-culture-modal-open {
 }
 </style>
 
+<style>
+
+/* Bilingual interface and Arabic RTL presentation */
+.language-toggle-button {
+    display: inline-flex;
+    appearance: none;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    white-space: nowrap;
+    font: inherit;
+    line-height: 1;
+    min-height: 38px;
+    padding: 0 13px;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    background: var(--black);
+    color: var(--white-pure);
+    border-color: var(--black);
+}
+.language-toggle-button:hover {
+    background: var(--lime);
+    color: var(--black);
+    border-color: var(--black);
+    transform: translateY(-2px);
+}
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+    font-family: Tahoma, Arial, sans-serif;
+}
+html[dir="rtl"] body * { letter-spacing: normal; }
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5 {
+    letter-spacing: 0 !important;
+    line-height: 1.22;
+}
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .hero-grid,
+html[dir="rtl"] .language-library-preview,
+html[dir="rtl"] .experience-role-row,
+html[dir="rtl"] .footer-content { direction: rtl; }
+html[dir="rtl"] .menu-toggle { margin-left: 0; margin-right: auto; }
+html[dir="rtl"] .nav-links { text-align: right; margin-left: 0; margin-right: auto; }
+html[dir="rtl"] .nav-links a { text-align: right; }
+html[dir="rtl"] .language-library-card-count,
+html[dir="rtl"] .language-work-count { text-align: left; }
+html[dir="rtl"] .language-work-button,
+html[dir="rtl"] .language-library-card-button { align-self: flex-start; }
+html[dir="rtl"] .work-modal-header,
+html[dir="rtl"] .video-work-card-info { direction: rtl; text-align: right; }
+html[dir="rtl"] .work-modal-close,
+html[dir="rtl"] .language-toggle-button { font-family: Tahoma, Arial, sans-serif; }
+html[dir="rtl"] .language-library-code-grid,
+html[dir="rtl"] .language-library-mini-grid { direction: rtl; }
+html[dir="rtl"] .project-tags,
+html[dir="rtl"] .language-tags,
+html[dir="rtl"] .language-library-tags { direction: rtl; }
+html[dir="rtl"] .best-student-media-caption,
+html[dir="rtl"] .cross-cultural-media-caption { direction: rtl; }
+@media (max-width: 820px) {
+    .language-toggle-button { min-height: 40px; padding: 0 10px; font-size: 10px; }
+}
+
+</style>
 </head>
 
-<body>
+<body data-english-title="Abdelrahman Hassoun | Translation × AI × Communication" data-arabic-meta-description="ملف أعمال عبدالرحمن حسون في الترجمة والذكاء الاصطناعي والتواصل والمحتوى الرقمي.">
 
     <!-- =========================
          NAVIGATION
@@ -1990,6 +2057,8 @@ body.arabic-culture-modal-open {
             >
                 LinkedIn
             </a>
+
+            <button type="button" class="nav-button language-toggle-button" id="languageToggle" aria-label="Switch website language to Arabic" aria-pressed="false">العربية</button>
 
         </div>
     </header>
@@ -3677,6 +3746,7 @@ body.arabic-culture-modal-open {
                         </article>
                     `;
                 }).join("");
+                if (window.applyPortfolioLanguage) window.applyPortfolioLanguage(window.getPortfolioLanguage(), false);
             }
 
             function openVideoGallery() {
@@ -4095,6 +4165,95 @@ body.arabic-culture-modal-open {
             closeModal();
         }
     });
+})();
+</script>
+
+<script>window.PORTFOLIO_TRANSLATIONS = {"text": {"About": "نبذة عني", "Experience": "الخبرة", "Work": "الأعمال", "Projects": "المشاريع", "Education": "التعليم", "Certifications": "الشهادات", "Contact": "تواصل", "LinkedIn": "LinkedIn", "Close": "إغلاق", "Back to Main Portfolio ↗": "العودة إلى الصفحة الرئيسية ↗", "Back to Main Portfolio": "العودة إلى الصفحة الرئيسية", "TRANSLATION × AI × COMMUNICATION × DIGITAL CONTENT": "الترجمة × الذكاء الاصطناعي × التواصل × المحتوى الرقمي", "Translation student and language professional exploring how artificial intelligence can support translation, communication, and digital content creation.": "طالب ترجمة ومهتم بالعمل اللغوي، أستكشف كيف يمكن للذكاء الاصطناعي دعم الترجمة والتواصل وإنشاء المحتوى الرقمي.", "Explore My Work": "استكشف أعمالي", "Get in Touch": "تواصل معي", "Translation": "الترجمة", "Visit GJU ↗": "زيارة الجامعة ↗", "AI": "الذكاء الاصطناعي", "Translation & Content": "الترجمة والمحتوى", "Professional Experience": "الخبرة المهنية", "Visit MLC ↗": "زيارة المركز ↗", "PORTFOLIO": "ملف الأعمال", "Currently": "حاليًا", "Translation Student & Language Professional": "طالب ترجمة ومهتم بالعمل اللغوي", "German Jordanian University": "الجامعة الألمانية الأردنية", "01 — ABOUT ME": "01 — نبذة عني", "Building at the intersection of language and technology.": "أبني مساري عند تقاطع اللغة والتكنولوجيا.", "I am a second-year Translation student at the German Jordanian University with a growing focus on the relationship between language, artificial intelligence, communication, and digital content.": "أنا طالب ترجمة في السنة الثانية بالجامعة الألمانية الأردنية، وينصبّ اهتمامي على العلاقة بين اللغة والذكاء الاصطناعي والتواصل والمحتوى الرقمي.", "My work combines academic study, professional experience, cultural exchange, leadership, and continuous learning.": "يجمع مساري بين الدراسة الأكاديمية والخبرة المهنية والتبادل الثقافي والقيادة والتعلّم المستمر.", "I am particularly interested in the human skills that remain essential when working with AI: critical thinking, communication, cultural awareness, creativity, and judgment.": "أهتم خصوصًا بالمهارات الإنسانية التي تظل أساسية عند العمل باستخدام الذكاء الاصطناعي، مثل التفكير النقدي والتواصل والوعي الثقافي والإبداع وحسن التقدير.", "My professional journey at the Modern Language Center began as an intern and continued with the organization as an official employee.": "بدأت رحلتي المهنية في Modern Language Center (مركز اللغات الحديث) كمتدرب، ثم واصلت العمل مع المركز بصفة موظف رسمي.", "Academic foundation in translation, languages, linguistics, and intercultural communication.": "أساس أكاديمي في الترجمة واللغات واللسانيات والتواصل بين الثقافات.", "Artificial Intelligence": "الذكاء الاصطناعي", "Exploring practical applications of AI in translation, language learning, and digital content.": "استكشاف التطبيقات العملية للذكاء الاصطناعي في الترجمة وتعلّم اللغات والمحتوى الرقمي.", "Communication": "التواصل", "Developing professional communication, public speaking, critical thinking, and cross-cultural communication.": "تطوير مهارات التواصل المهني والتحدث أمام الجمهور والتفكير النقدي والتواصل بين الثقافات.", "02 — PROFESSIONAL EXPERIENCE": "02 — الخبرة المهنية", "From internship to professional experience.": "من التدريب إلى الخبرة المهنية.", "MODERN LANGUAGE CENTER": "مركز اللغات الحديث · MLC", "Intern → Official Employee": "متدرب ← موظف رسمي", "View on LinkedIn ↗": "عرض على LinkedIn ↗", "My journey with the Modern Language Center started through an internship and continued with the organization as an official employee.": "بدأت رحلتي مع مركز اللغات الحديث من خلال التدريب، ثم استمرت بالعمل مع المركز بصفة موظف رسمي.", "Digital Content": "المحتوى الرقمي", "Contributed to language-learning and digital content using AI-assisted workflows and visual content.": "ساهمت في إعداد محتوى تعلّم اللغات والمحتوى الرقمي باستخدام سير عمل مدعوم بالذكاء الاصطناعي وأدوات التصميم البصري.", "View My Digital Content ↗": "عرض أعمالي في المحتوى الرقمي ↗", "Language Content": "محتوى اللغات", "Worked with English, Spanish, Korean, and other language-learning content formats.": "عملت على محتوى تعلّم اللغات بالإنجليزية والإسبانية والكورية ولغات أخرى.", "View My Language Content ↗": "عرض أعمالي في محتوى اللغات ↗", "Representation": "التمثيل والمشاركة", "Represented the Modern Language Center at Y Hala Meet Korea at Haya Cultural Center in Amman.": "مثّلت مركز اللغات الحديث في فعالية Y Hala Meet Korea في مركز هيا الثقافي في عمّان.", "Professional Development": "التطوير المهني", "Developed practical experience in communication, organization, teamwork, and digital work.": "اكتسبت خبرة عملية في التواصل والتنظيم والعمل الجماعي والعمل الرقمي.", "REPRESENTATION": "تمثيل المركز", "Y Hala Meet Korea": "Y Hala Meet Korea", "24–25 July 2026 · Haya Cultural Center · Amman": "24–25 يوليو 2026 · مركز هيا الثقافي · عمّان", "03 — AI & DIGITAL CONTENT": "03 — الذكاء الاصطناعي والمحتوى الرقمي", "Language content built with AI-assisted workflows.": "محتوى لغوي أُنتج باستخدام سير عمل مدعوم بالذكاء الاصطناعي.", "A growing library of multilingual language-learning content developed through visual storytelling, AI-assisted creation, and context-based communication.": "مكتبة متنامية من محتوى تعلّم اللغات متعدد اللغات، طُوّرت من خلال السرد البصري والإنتاج المدعوم بالذكاء الاصطناعي والتواصل القائم على السياق.", "LANGUAGE CONTENT LIBRARY": "مكتبة محتوى اللغات", "One place for all my language work.": "مكان واحد لجميع أعمالي اللغوية.", "Explore my selected daily language content by language. Korean, English, Spanish, German, French, Chinese, and Turkish work are organized in one dedicated library so the main portfolio stays focused and easy to navigate.": "استكشف مختارات من محتوى نصائح اللغات اليومية، مرتبة حسب اللغة. جمعت أعمالي في الكورية والإنجليزية والإسبانية والألمانية والفرنسية والصينية والتركية في مكتبة مستقلة، ليبقى ملف أعمالي الرئيسي منظمًا وسهل التصفح.", "KR · Korean": "KR · الكورية", "EN · English": "EN · الإنجليزية", "ES · Spanish": "ES · الإسبانية", "DE · German": "DE · الألمانية", "FR · French": "FR · الفرنسية", "ZH · Chinese": "ZH · الصينية", "TR · Turkish": "TR · التركية", "Explore My Language Work ↗": "استكشف أعمالي اللغوية ↗", "LANGUAGE LIBRARY": "مكتبة اللغات", "07 LANGUAGES": "7 لغات", "Selected visual work": "نماذج من الأعمال البصرية", "Open library →": "افتح المكتبة ←", "AI VISUAL CONTENT": "المحتوى البصري بالذكاء الاصطناعي", "AI-Assisted Visual Storytelling": "السرد البصري المدعوم بالذكاء الاصطناعي", "Selected video projects created from concept to final output, combining scripting, visual direction, AI-assisted production, and editing.": "مجموعة مختارة من مشاريع الفيديو التي طُوّرت من الفكرة إلى المنتج النهائي، وجمعت بين كتابة النص والتوجيه البصري والإنتاج المدعوم بالذكاء الاصطناعي والمونتاج.", "VIDEO": "فيديو", "09 selected videos": "9 فيديوهات مختارة", "Explore the video work.": "استكشف أعمال الفيديو.", "A selected set of language, educational, and promotional video projects developed through AI-assisted visual workflows.": "مجموعة مختارة من مشاريع الفيديو اللغوية والتعليمية والإعلانية، أُنتجت باستخدام سير عمل بصري مدعوم بالذكاء الاصطناعي.", "View My Video Work ↗": "عرض أعمال الفيديو ↗", "04 — SELECTED PROJECTS": "04 — مشاريع مختارة", "Academic and personal work.": "أعمال أكاديمية ومشاريع شخصية.", "PROJECT 01": "المشروع 01", "UNIVERSITY · SPORT & HEALTH": "مشروع جامعي · الرياضة والصحة", "Sports Fanaticism & Smoking Behavior": "التعصب الرياضي وسلوك التدخين", "A group research project examining whether sports fanaticism may influence smoking behavior among sports fans.": "مشروع بحثي جماعي يدرس احتمال تأثير التعصب الرياضي في سلوك التدخين لدى المشجعين الرياضيين.", "81 Participants": "81 مشاركًا", "Survey": "استبيان", "Interviews": "مقابلات", "Field Observation": "ملاحظة ميدانية", "The research explored stress as a possible mediating factor and examined the role of personal habits and social environments.": "استكشف البحث التوتر بوصفه عاملًا وسيطًا محتملًا، كما تناول دور العادات الشخصية والبيئات الاجتماعية.", "Group Leader": "قائد المجموعة", "View Project Report ↗": "عرض تقرير المشروع ↗", "View Project on LinkedIn ↗": "عرض المشروع على LinkedIn ↗", "PROJECT 02": "المشروع 02", "AI × TRANSLATION": "الذكاء الاصطناعي × الترجمة", "AI-Assisted Translation Exploration": "استكشاف الترجمة المدعومة بالذكاء الاصطناعي", "A personal exploration of how AI-generated translations can be evaluated beyond literal linguistic accuracy.": "استكشاف شخصي لكيفية تقييم الترجمات التي ينتجها الذكاء الاصطناعي بما يتجاوز الدقة اللغوية الحرفية.", "The experiment compared an Arabic phrase with an AI-generated English translation while considering meaning, emotion, context, and cultural nuance.": "قارنت التجربة عبارة عربية بترجمة إنجليزية مولّدة بالذكاء الاصطناعي، مع مراعاة المعنى والعاطفة والسياق والفروق الثقافية الدقيقة.", "Arabic": "العربية", "AI Translation": "ترجمة بالذكاء الاصطناعي", "Personal Exploration": "استكشاف شخصي", "PROJECT 03": "المشروع 03", "CULTURAL EXCHANGE": "تبادل ثقافي", "Arabic Language & Culture Summer School": "المدرسة الصيفية للغة العربية والثقافة", "Participated in a cultural exchange experience with German students from Goethe University Frankfurt and the University of Hamburg.": "شاركت في تجربة تبادل ثقافي مع طلاب ألمان من جامعة غوته في فرانكفورت وجامعة هامبورغ.", "Contributed to cultural exchange by introducing aspects of Jordanian culture, traditions, and hospitality while learning from the participants' cultural backgrounds.": "ساهمت في التبادل الثقافي من خلال التعريف بجوانب من الثقافة الأردنية والتقاليد والضيافة، والتعرّف في المقابل على الخلفيات الثقافية للمشاركين.", "Best Student": "أفضل طالب", "05 — LEADERSHIP & DEVELOPMENT": "05 — القيادة والتطوير", "Aspire Leaders Program": "برنامج Aspire Leaders", "2026 Aspire Leaders Program": "برنامج Aspire Leaders لعام 2026", "Successfully completed the 2026 Aspire Leaders Program at Aspire Institute through a nine-week learning experience with approximately 40 hours of coursework.": "أتممت بنجاح برنامج Aspire Leaders لعام 2026 في Aspire Institute، من خلال تجربة تعليمية امتدت تسعة أسابيع وشملت نحو 40 ساعة من الدورات والمهام التعليمية.", "99/100": "99/100", "Final Assessment": "التقييم النهائي", "40h": "40 ساعة", "Coursework": "ساعات دراسية", "9": "9", "Weeks": "أسابيع", "The program focused on leadership development, critical thinking, communication, self-awareness, and positive social impact.": "ركّز البرنامج على تطوير القيادة والتفكير النقدي والتواصل والوعي الذاتي وتحقيق أثر اجتماعي إيجابي.", "Program Completion": "إتمام البرنامج", "Successfully completed all required modules and the final assessment.": "أتممت جميع الوحدات المطلوبة والتقييم النهائي بنجاح.", "View Certificate ↗": "عرض الشهادة ↗", "View Completion Proof ↗": "عرض إثبات الإتمام ↗", "View LinkedIn Post ↗": "عرض المنشور على LinkedIn ↗", "06 — CULTURAL EXCHANGE & LEADERSHIP": "06 — التبادل الثقافي والقيادة", "Communication across cultures.": "التواصل بين الثقافات.", "Arabic Language & Culture": "اللغة العربية والثقافة", "Participated in an Arabic Language and Culture Summer School and worked as a cultural exchange partner with German students.": "شاركت في المدرسة الصيفية للغة العربية والثقافة، وعملت شريكًا في التبادل الثقافي مع طلاب ألمان.", "View Photo ↗": "عرض الصورة ↗", "Selected as Best Student during the cultural exchange experience.": "تم اختياري كأفضل طالب خلال تجربة التبادل الثقافي.", "Recognition by Dr. Khalida Radaydeh and Dr. Lubna Muawad.": "جاء هذا التكريم بتقدير من الدكتورة خالدة ردايدة والدكتورة لبنى معوّض.", "View Photos & Video ↗": "عرض الصور والفيديو ↗", "Cross-Cultural Communication": "التواصل بين الثقافات", "Developed practical experience in presenting Jordanian culture and engaging in intercultural communication.": "اكتسبت خبرة عملية في تقديم الثقافة الأردنية والمشاركة في التواصل بين الثقافات.", "07 — EDUCATION": "07 — التعليم", "Academic foundation.": "المسار الأكاديمي.", "BACHELOR'S DEGREE": "درجة البكالوريوس", "Second-year Translation student with academic interests spanning translation, linguistics, Arabic language, German, communication, and technology.": "طالب ترجمة في السنة الثانية، وتشمل اهتماماتي الأكاديمية الترجمة واللسانيات واللغة العربية والألمانية والتواصل والتكنولوجيا.", "08 — CERTIFICATIONS": "08 — الشهادات", "Continuous learning.": "التعلّم المستمر.", "LinkedIn Learning": "LinkedIn Learning", "Communication Foundations": "أساسيات التواصل", "Professional Communication": "التواصل المهني", "February 2026": "فبراير 2026", "Critical Thinking": "التفكير النقدي", "Critical Thinking & Decision-Making": "التفكير النقدي واتخاذ القرار", "Learning Personal Branding": "تعلّم بناء العلامة الشخصية", "Personal Branding": "العلامة الشخصية", "Public Speaking Foundations": "أساسيات التحدث أمام الجمهور", "Public Speaking": "التحدث أمام الجمهور", "Communicating Across Cultures": "التواصل بين الثقافات", "Intercultural Communication": "التواصل بين الثقافات", "Crown Prince Foundation": "مؤسسة ولي العهد", "من الفكرة للمحتوى": "من الفكرة للمحتوى", "الكتابة بمساعدة الذكاء الاصطناعي": "الكتابة بمساعدة الذكاء الاصطناعي", "March 2026": "مارس 2026", "09 — LINKEDIN": "09 — LinkedIn", "Selected professional reflections.": "مختارات من آرائي المهنية.", "Writing, research, career development, AI in translation, and professional growth.": "الكتابة والبحث والتطوير المهني والذكاء الاصطناعي في الترجمة والنمو الوظيفي.", "AI in Translation": "الذكاء الاصطناعي في الترجمة", "Reflections on how AI is changing the translation process and the human skills that remain important.": "تأملات حول كيفية تغيير الذكاء الاصطناعي لعملية الترجمة والمهارات الإنسانية التي تظل مهمة.", "View on LinkedIn →": "عرض على LinkedIn ←", "RESEARCH": "بحث", "Sport & Health Research": "بحث الرياضة والصحة", "A university research project examining sports fanaticism and smoking behavior.": "مشروع بحث جامعي يدرس العلاقة بين التعصب الرياضي وسلوك التدخين.", "Reflections on cultural exchange, language, communication, and learning across cultures.": "تأملات حول التبادل الثقافي واللغة والتواصل والتعلّم عبر الثقافات.", "LEADERSHIP": "قيادة", "Reflections on completing the 2026 Aspire Leaders Program.": "تأملات حول إتمام برنامج Aspire Leaders لعام 2026.", "10 — CONTACT": "10 — التواصل", "Let's connect.": "لنتواصل.", "Interested in translation, AI, communication, digital content, or collaboration?": "هل تهتم بالترجمة أو الذكاء الاصطناعي أو التواصل أو المحتوى الرقمي أو التعاون المهني؟", "Email": "البريد الإلكتروني", "Abdelrahman Hassoun": "عبدالرحمن حسون", "Translation × AI × Communication × Digital Content": "الترجمة × الذكاء الاصطناعي × التواصل × المحتوى الرقمي", "Selected Video Work": "مختارات من أعمال الفيديو", "Selected video projects created from concept to final output.": "مجموعة مختارة من مشاريع الفيديو التي طُوّرت من الفكرة إلى المنتج النهائي.", "Your browser does not support the video element.": "متصفحك لا يدعم تشغيل الفيديو.", "CULTURAL EXCHANGE & RECOGNITION": "التبادل الثقافي والتكريم", "Best Student — Selected Moments": "أفضل طالب — لحظات مختارة", "Photos and video from the Arabic Language & Culture Summer School experience and Best Student recognition.": "صور وفيديو من تجربة المدرسة الصيفية للغة العربية والثقافة وتكريم أفضل طالب.", "Recognition Moment": "لحظة التكريم", "· Photo": "· صورة", "Certificate Moment": "لحظة الشهادة", "· Video": "· فيديو", "Cultural Exchange Event": "فعالية التبادل الثقافي", "CROSS-CULTURAL COMMUNICATION": "التواصل بين الثقافات", "Cultural Exchange — Selected Moments": "التبادل الثقافي — لحظات مختارة", "Photos and video documenting cultural exchange, Jordanian culture, and shared experiences during the program.": "صور وفيديو توثّق التبادل الثقافي والثقافة الأردنية والتجارب المشتركة خلال البرنامج.", "Cultural Exchange": "التبادل الثقافي", "Shared Experience": "تجربة مشتركة", "Jordanian Hospitality": "الضيافة الأردنية", "Arabic Language & Culture — Group Moment": "اللغة العربية والثقافة — صورة جماعية", "ENGLISH · AI-ASSISTED CONTENT": "الإنجليزية · محتوى مدعوم بالذكاء الاصطناعي", "Aya Avatar English — TOEFL / IELTS": "محتوى أفاتار آية للإنجليزية — TOEFL / IELTS", "AI-avatar English content focused on TOEFL / IELTS.": "محتوى باللغة الإنجليزية باستخدام أفاتار بالذكاء الاصطناعي، ويركّز على التحضير لاختباري TOEFL وIELTS.", "GERMAN · LANGUAGE CONTENT": "الألمانية · محتوى لغوي", "Nursing German B2": "الألمانية للتمريض — B2", "German-language video content built around nursing-related communication.": "محتوى فيديو باللغة الألمانية يركّز على التواصل والمصطلحات المرتبطة بمجال التمريض.", "STUDY ABROAD · PROMOTIONAL CONTENT": "الدراسة في الخارج · محتوى إعلاني", "Asia + Study Abroad Reel": "فيديو آسيا والدراسة في الخارج", "A short study-abroad promotional reel focused on Asia.": "فيديو ترويجي قصير يعرّف بخدمات الدراسة في الخارج ويركّز على آسيا.", "MLC · AI-ASSISTED VIDEO": "MLC · فيديو مدعوم بالذكاء الاصطناعي", "MLC Language Content Video": "فيديو محتوى مركز اللغات الحديث", "Language-center video content featuring an AI presenter.": "فيديو لمركز اللغات الحديث يتضمن مقدمًا افتراضيًا مدعومًا بالذكاء الاصطناعي.", "MLC · PROMOTIONAL CONTENT": "MLC · محتوى إعلاني", "English Courses — Starting 25 October 2026": "دورات اللغة الإنجليزية — تبدأ في 25 أكتوبر 2026", "Promotional announcement for English language courses starting on 25 October 2026 at the Modern Language Center.": "إعلان عن بدء دورات اللغة الإنجليزية في مركز اللغات الحديث بتاريخ 25 أكتوبر 2026.", "MLC · GERMAN COURSE ANNOUNCEMENT": "MLC · إعلان دورات اللغة الألمانية", "German Courses — Starting 1 November 2026": "دورات اللغة الألمانية — تبدأ في 1 نوفمبر 2026", "AI-assisted promotional video announcing German language courses at the Modern Language Center, starting on 1 November 2026.": "فيديو ترويجي مدعوم بالذكاء الاصطناعي للإعلان عن دورات اللغة الألمانية في مركز اللغات الحديث، والتي تبدأ في 1 نوفمبر 2026.", "MLC · ÖSD EXAM PREPARATION": "MLC · التحضير لامتحان ÖSD", "ÖSD Preparation Courses — One Day Before the Exam": "الدورات التحضيرية لامتحان ÖSD — قبل الامتحان بيوم", "Promotional announcement for preparatory courses held at the Modern Language Center one day before ÖSD examinations.": "إعلان عن الدورات التحضيرية التي يعقدها مركز اللغات الحديث قبل امتحان ÖSD بيوم واحد.", "Study Abroad Services": "خدمات الدراسة في الخارج", "Promotional video presenting the Modern Language Center’s study-abroad services.": "فيديو ترويجي يعرّف بخدمات الدراسة في الخارج التي يقدمها مركز اللغات الحديث.", "CHINESE · LANGUAGE & STUDY ABROAD": "الصينية · اللغة والدراسة في الخارج", "01 · ENGLISH · AI-ASSISTED CONTENT": "01 · الإنجليزية · محتوى مدعوم بالذكاء الاصطناعي", "02 · GERMAN · LANGUAGE CONTENT": "02 · الألمانية · محتوى لغوي", "03 · STUDY ABROAD · PROMOTIONAL CONTENT": "03 · الدراسة في الخارج · محتوى إعلاني", "04 · MLC · AI-ASSISTED VIDEO": "04 · MLC · فيديو مدعوم بالذكاء الاصطناعي", "05 · MLC · PROMOTIONAL CONTENT": "05 · MLC · محتوى إعلاني", "06 · MLC · GERMAN COURSE ANNOUNCEMENT": "06 · MLC · إعلان دورات اللغة الألمانية", "07 · MLC · ÖSD EXAM PREPARATION": "07 · MLC · التحضير لامتحان ÖSD", "08 · STUDY ABROAD · PROMOTIONAL CONTENT": "08 · الدراسة في الخارج · محتوى إعلاني", "09 · CHINESE · LANGUAGE & STUDY ABROAD": "09 · الصينية · اللغة والدراسة في الخارج", "Chinese Courses & Study Abroad Services": "دورات اللغة الصينية وخدمات الدراسة في الخارج", "Chinese-language promotional video combining Chinese course information with study-abroad services, with careful attention to pronunciation, articulation, and translation accuracy.": "فيديو إعلاني باللغة الصينية يجمع بين التعريف بدورات اللغة الصينية وخدمات الدراسة في الخارج، مع عناية خاصة بالتدقيق في النطق ومخارج الحروف ودقة الترجمة."}, "attrs": {"Abdelrahman Hassoun Home": "الصفحة الرئيسية لعبدالرحمن حسون", "Open navigation menu": "فتح قائمة التنقل", "Visit German Jordanian University website": "زيارة موقع الجامعة الألمانية الأردنية", "Visit Modern Language Center website": "زيارة موقع مركز اللغات الحديث", "Abdelrahman Hassoun": "عبدالرحمن حسون", "Open the Sports Fanaticism and Smoking Behavior project report": "فتح تقرير مشروع التعصب الرياضي وسلوك التدخين", "Email Abdelrahman Hassoun at hasoun.work@gmail.com": "مراسلة عبدالرحمن حسون على البريد الإلكتروني hasoun.work@gmail.com", "Close video work gallery": "إغلاق معرض أعمال الفيديو", "Best Student recognition moment at the German Jordanian University": "لحظة تكريم أفضل طالب في الجامعة الألمانية الأردنية", "Best Student certificate moment during the cultural exchange program": "لحظة استلام شهادة أفضل طالب خلال برنامج التبادل الثقافي", "Cultural exchange group activity in Jordan": "نشاط جماعي ضمن التبادل الثقافي في الأردن", "Cultural exchange moment with a German participant": "لحظة من التبادل الثقافي مع أحد المشاركين الألمان", "Jordanian hospitality and cultural exchange gathering": "لقاء للضيافة الأردنية والتبادل الثقافي", "Arabic Language and Culture Summer School group photo": "صورة جماعية للمدرسة الصيفية للغة العربية والثقافة"}};</script>
+
+<script>
+(function () {
+    const dictionaries = window.PORTFOLIO_TRANSLATIONS || {};
+    const textMap = dictionaries.text || {};
+    const attrMap = dictionaries.attrs || {};
+    const button = document.getElementById('languageToggle');
+    const textOriginals = new WeakMap();
+
+    function currentLanguage() {
+        return document.documentElement.lang === 'ar' ? 'ar' : 'en';
+    }
+
+    function translateTextNodes(language) {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                const parent = node.parentElement;
+                if (!parent || parent.closest('script, style, noscript, textarea, input, select, option')) return NodeFilter.FILTER_REJECT;
+                return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+            }
+        });
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(node => {
+            if (!textOriginals.has(node)) textOriginals.set(node, node.nodeValue);
+            const original = textOriginals.get(node);
+            const leading = (original.match(/^\s*/) || [''])[0];
+            const trailing = (original.match(/\s*$/) || [''])[0];
+            const key = original.trim().replace(/\s+/g, ' ');
+            const translated = textMap[key];
+            node.nodeValue = leading + (language === 'ar' && translated ? translated : key) + trailing;
+        });
+    }
+
+    function translateAttributes(language) {
+        document.querySelectorAll('[aria-label], [alt], [title], [placeholder]').forEach(el => {
+            ['aria-label', 'alt', 'title', 'placeholder'].forEach(attr => {
+                if (!el.hasAttribute(attr)) return;
+                const dataKey = 'portfolioOriginal' + attr.replace(/(^|-)(\w)/g, (_, a, b) => b.toUpperCase());
+                if (!el.dataset[dataKey]) el.dataset[dataKey] = el.getAttribute(attr);
+                const original = el.dataset[dataKey];
+                el.setAttribute(attr, language === 'ar' && attrMap[original] ? attrMap[original] : original);
+            });
+        });
+    }
+
+    function applyLanguage(language, persist = true) {
+        language = language === 'ar' ? 'ar' : 'en';
+        document.documentElement.lang = language;
+        document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+        document.body.classList.toggle('site-arabic', language === 'ar');
+        translateTextNodes(language);
+        translateAttributes(language);
+        if (button) {
+            button.textContent = language === 'ar' ? 'English' : 'العربية';
+            button.setAttribute('aria-label', language === 'ar' ? 'Switch website language to English' : 'تغيير لغة الموقع إلى العربية');
+            button.setAttribute('aria-pressed', language === 'ar' ? 'true' : 'false');
+        }
+        if (language === 'ar') {
+            document.title = document.title === 'Abdelrahman Hassoun | Translation × AI × Communication'
+                ? 'عبدالرحمن حسون | الترجمة والذكاء الاصطناعي والتواصل'
+                : (document.title === 'Language Content Library | Abdelrahman Hassoun'
+                    ? 'مكتبة محتوى اللغات | عبدالرحمن حسون' : document.title);
+        } else {
+            document.title = document.body.dataset.englishTitle || (document.documentElement.dataset.pageTitleEn || document.title);
+        }
+        const description = document.querySelector('meta[name="description"]');
+        if (description) {
+            if (!description.dataset.englishContent) description.dataset.englishContent = description.getAttribute('content') || '';
+            description.setAttribute('content', language === 'ar'
+                ? (document.body.dataset.arabicMetaDescription || 'ملف أعمال عبدالرحمن حسون في الترجمة والذكاء الاصطناعي والتواصل والمحتوى الرقمي.')
+                : description.dataset.englishContent);
+        }
+        if (persist) {
+            try { localStorage.setItem('abdelrahmanPortfolioLanguage', language); } catch (e) {}
+        }
+    }
+
+    window.applyPortfolioLanguage = applyLanguage;
+    window.getPortfolioLanguage = currentLanguage;
+    if (button) button.addEventListener('click', () => applyLanguage(currentLanguage() === 'ar' ? 'en' : 'ar'));
+
+    let saved = 'en';
+    try { saved = localStorage.getItem('abdelrahmanPortfolioLanguage') || 'en'; } catch (e) {}
+    applyLanguage(saved, false);
 })();
 </script>
 
